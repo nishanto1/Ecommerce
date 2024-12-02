@@ -6,8 +6,10 @@ import { useNavigate } from "react-router-dom";
 import * as yup from "yup";
 import { login } from "../../redux/reducer";
 import { addUsers, deleteUsers, usersList } from "../../Request/endPoints";
+import useDetails from "../../hooks/useDetail";
 
 function Dashboard() {
+  const details = useDetails();
   const dispatch = useDispatch();
   const navigate = useNavigate();
   // users list
@@ -51,7 +53,8 @@ function Dashboard() {
 
   return (
     <>
-      Admin Dashboard <br /> <br />
+      <h1>Admin {details?.name} Dashboard</h1>
+      <br /> <br />
       <button
         onClick={() => {
           dispatch(login(""));

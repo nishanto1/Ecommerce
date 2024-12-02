@@ -19,7 +19,7 @@ function Register() {
   });
   return (
     <>
-      <div>Register Page</div>
+      <h1>Register Page</h1>
       <br />
       <br />
       <label htmlFor="">Email</label>
@@ -55,6 +55,9 @@ function Register() {
       <br />
       <p>
         Already have an account <Link to={"/login"}>login</Link>
+      </p>
+      <p>
+        go to <Link to={"/"}>Home</Link>
       </p>
     </>
   );

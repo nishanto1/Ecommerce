@@ -31,7 +31,7 @@ function Login() {
   });
   return (
     <>
-      <div>Login Page</div>
+      <h1>Login Page</h1>
       <br />
       <br />
       <label htmlFor="">Name</label>
@@ -79,6 +79,9 @@ function Login() {
       <br />
       <p>
         Create an account <Link to={"/register"}>register</Link>
+      </p>
+      <p>
+        go to <Link to={"/"}>Home</Link>
       </p>
     </>
   );

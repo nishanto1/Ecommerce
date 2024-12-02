@@ -2,12 +2,12 @@ import { Navigate, Outlet } from "react-router-dom";
 import { Roles } from "../Constant";
 import useToken from "../hooks/useToken";
 import useDetails from "../hooks/useDetail";
+import useRole from "../hooks/useRole";
 
 // PROTECT ADMIN
 export const ProtectAdmin = () => {
   const token = useToken();
-  const role = useDetails();
-  console.log("token", token, role);
+  const role = useRole();
   if (token) {
     if (role == Roles?.COMPANY) {
       return <Navigate to="/company/dashboard" replace={true} />;
@@ -23,7 +23,7 @@ export const ProtectAdmin = () => {
 // PROTECT COMPANY
 export const ProtectCompany = () => {
   const token = useToken();
-  const role = useDetails();
+  const role = useRole();
   if (token) {
     if (role == Roles?.ADMIN) {
       return <Navigate to="/admin/dashboard" replace={true} />;
@@ -39,7 +39,7 @@ export const ProtectCompany = () => {
 // PROTECT CUSTOMER
 export const ProtectCustomer = () => {
   const token = useToken();
-  const role = useDetails();
+  const role = useRole();
   if (token) {
     if (role == Roles?.ADMIN) {
       return <Navigate to="/admin/dashboard" replace={true} />;
